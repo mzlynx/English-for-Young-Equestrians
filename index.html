@@ -1,0 +1,300 @@
+<html>
+<head>
+    <title>English for Young Equestrians</title>
+    <style>
+        .check-button {
+            background-color: rgba(235, 104, 57, 0.664);
+            color: olive;
+        }
+
+        .activity-header {
+            color:olive; 
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <br />
+    <div style="color:olive; font-size: x-large; text-align: center; font-weight: bold;">
+        Module 1. Lesson 1. Spirit: Here I am! 
+    </div>
+    <br />
+    <img src="images/1spirit.jpg" />
+    <br />
+    Hi, I'm Spirit!
+    <br />
+    What's your name?
+    <br />
+    Type your name here:
+    <br />
+    <input type="text" id="input1" placeholder="your name" />
+    <br />
+    Glad to meet you, <input type="text" value="Panda" id="input1" />
+    <br />
+    Let's get started!
+    <br />
+    <br />
+    <span class="activity-header">Activity 1. Let's watch a video about me.</span>
+    <br />
+    <iframe width="1280" height="720" src="https://www.youtube.com/embed/4LQ3gHQIQj8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    <br />
+    Do you like it?
+    <br />
+    Choose:
+    <br />
+    <select>
+        <option>Yes, I do! :-)</option>
+        <option>No, I don't. :-(</option>
+    </select>
+    <br />
+    <br />
+    <span class="activity-header">Activity 2. Let's learn 6 new words:</span>
+    <br />
+    1. I - я
+    <br />
+    2. start - начало
+    <br />
+    3. world - мир
+    <br />
+    4. new - новый
+    <br />
+    5. day - день
+    <br />
+    6. land- земля
+    <br />
+    <br />
+    <span class="activity-header">Activity 3. Let's practice! Unscrambe the words:</span>
+    <br />
+
+    1. начало
+    <br /><span style="color:navy; font-weight: bold;">*sartt*</span>
+    <br />
+     <input type="text" placeholder="type your answer"  id="input_unscramble1" />
+    <button onclick="CheckType('input_unscramble1', 'feedback1', 'start')" class="check-button">Check</button>
+    <span id="feedback1"></span>
+    <br />
+
+    2. мир
+    <br /><span style="color:navy; font-weight: bold;">*ldrwo*</span>
+    <br />
+     <input type="text" placeholder="type your answer" id="input_unscramble2"  />
+    <button  onclick="CheckType('input_unscramble2', 'feedback2', 'world')" class="check-button">Check</button>
+    <span id="feedback2"></span>
+    <br />
+
+    3. новый
+    <br /><span style="color:navy; font-weight: bold;">*ewn*</span>
+    <br />
+     <input type="text" placeholder="type your answer" id="input_unscramble3"  />
+    <button  onclick="CheckType('input_unscramble3', 'feedback3', 'new')" class="check-button">Check</button>
+    <span id="feedback3"></span>
+    <br />
+
+    4. день
+    <br /><span style="color:navy; font-weight: bold;">*ady*</span>
+    <br />
+     <input type="text" placeholder="type your answer" id="input_unscramble4"  />
+    <button onclick="CheckType('input_unscramble4', 'feedback4', 'day')" class="check-button">Check</button>
+    <span id="feedback4"></span>
+    <br />
+
+    5. земля
+    <br /><span style="color:navy; font-weight: bold;">*ndal*</span>
+    <br />
+     <input type="text" placeholder="type your answer" id="input_unscramble5"  />
+    <button onclick="CheckType('input_unscramble5', 'feedback5', 'land')" class="check-button">Check</button>
+    <span id="feedback5"></span>
+    <br />
+    <br />
+
+    <script>
+        function CheckType(InputId, FeedbackId, RightAnswer) {
+            var input = document.getElementById(InputId);
+            var feedback = document.getElementById(FeedbackId);
+
+            if (input.value == RightAnswer) {
+                feedback.innerHTML = 'Well done!';
+                feedback.style.color = 'green';
+            }
+            else {
+                feedback.innerHTML = 'Try again :(';
+                feedback.style.color = 'red';
+            }
+        }
+
+        function CheckTypeList(InputId, FeedbackId, RightAnswers) {
+            var input = document.getElementById(InputId);
+            var feedback = document.getElementById(FeedbackId);
+
+            if (RightAnswers.indexOf(input.value) != -1) {
+                feedback.innerHTML = 'Well done!';
+                feedback.style.color = 'green';
+            }
+            else {
+                feedback.innerHTML = 'Try again :(';
+                feedback.style.color = 'red';
+            }
+        }
+
+        function CheckSelect(Select, FeedbackId, RightAnswer) {
+            //здесь мы проверяем селекты
+            var feedback = document.getElementById(FeedbackId);
+
+            if (Select.value == '') {
+                feedback.innerHTML = '';
+            }
+            else if (Select.value == RightAnswer) {
+                feedback.innerHTML = 'Well done!';
+                feedback.style.color = 'green';
+            }
+            else {
+                feedback.innerHTML = 'Try again :(';
+                feedback.style.color = 'red';
+            }
+        }
+    </script>
+
+<span class="activity-header"> Activity 4. Let's practice! Choose the right option:</span>
+    <br />
+    1. я
+    <br />
+    Here <select onchange="CheckSelect(this, 'feedbackSelect1', 'I')">
+        <option></option>
+        <option> you</option>
+        <option>I</option>
+        <option>new</option>
+    </select> am. <span id="feedbackSelect1"></span>
+    <br />
+    2. начало
+    <br />
+    It's a new <select onchange="CheckSelect(this, 'feedbackSelect2', 'start')">
+        <option></option>
+        <option>card</option>
+        <option>I</option>
+        <option>start</option>.
+    </select>. <span id="feedbackSelect2"></span>
+    <br />
+    3. мир
+    <br />
+    It's a new <select onchange="CheckSelect(this, 'feedbackSelect3', 'world')">
+        <option></option>
+        <option>old</option>
+        <option>cold</option>
+        <option>world</option>
+    </select>. <span id="feedbackSelect3"></span>
+    <br />
+    4. новый
+    <br />
+    It's a
+    <select onchange="CheckSelect(this, 'feedbackSelect4', 'new')">
+        <option></option>
+        <option>you</option>
+        <option>new</option>
+        <option>few</option>
+    </select> start. <span id="feedbackSelect4"></span>
+    <br />
+    5. день
+    <br />
+    It's a new
+    <select onchange="CheckSelect(this, 'feedbackSelect5', 'day')">
+        <option></option>
+        <option>play</option>
+        <option>day</option>
+        <option>OK</option>
+    </select>. <span id="feedbackSelect5"></span>
+</select>. 
+    <br />
+    6. земля
+    <br />
+    In a new
+    <select onchange="CheckSelect(this, 'feedbackSelect6', 'land')">
+        <option></option>
+        <option>play</option>
+        <option>day</option>
+        <option>land</option>
+    </select>. <span id="feedbackSelect6"></span>
+    <br />
+    <br />
+    <span class="activity-header">Activity 5. Let's practice! Fill in the gaps:</span>
+    <br />
+    1. Here <input type="text" id="input_type1" /> am.
+    <br />
+    <button onclick="CheckType('input_type1', 'feedback_type1', 'I')" style="background-color:rgb(241, 153, 121);" class="check-button">Check</button><span id="feedback_type1"></span>
+    <br />
+    2. It's a new <input type="text" id="input_type2" />.
+    <br />
+    <button onclick="CheckTypeList('input_type2', 'feedback_type2', ['start', 'world', 'land'])" class="check-button">Check</button><span id="feedback_type2"></span>
+    <br />
+    3. I's a <input type="text" id="input_type3" /> world!
+    <br />
+    <button onclick="CheckType('input_type3', 'feedback_type3', 'new')" class="check-button">Check</button><span id="feedback_type3"></span>
+    <br />
+    4. In a new <input type="text" id="input_type4" />.
+    <br />
+    <button onclick="CheckType('input_type6', 'feedback_type6', 'land')" class="check-button">Check</button><span id="feedback_type4"></span>
+    <br />
+    <br />
+
+    <span class="activity-header"> Activity 6. Now I know:</span>
+    <br />
+    1. вот и я - Here I am
+    <br />
+    2. новое начало - new start
+    <br />
+    3.новая земля- new land
+    <br />
+    4.новый мир- new world
+    <br />
+    5. новый день - new day
+
+    <br />
+    <br />
+    <span class="activity-header"> 
+        Activity 7. Let's sing together!
+    </span>
+    <br />
+
+    <iframe width="1280" height="720" src="https://www.youtube.com/embed/4LQ3gHQIQj8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    <br />
+    <span style="color:olive">Here is the text for you:</span> 
+    <br />
+
+    Here I am<br />
+    This is me<br />
+    I come into this world so wild and free<br />
+    Here I am<br />
+    So young and strong<br />
+    Right here in the place where I belong<br />
+    It's a new world<br />
+    It's a new start<br />
+    It's a life with a beating of a young heart<br />
+    It's a new day<br />
+    In a new land<br />
+    And it's waiting for me<br />
+    Here I am<br />
+    Ooh!<br />
+    It's a new world<br />
+    It's a new start<br />
+    It's a life with a beating of a young heart<br />
+    Yeah, it's a new day<br />
+    In a new land<br />
+    And it's waiting for me<br />
+    Here I am
+
+
+    
+</body>
+</html>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/JiWqSsxjFQM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/Fiu8pAtST4M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1903" height="769" src="https://www.youtube.com/embed/ckUPvRhEYw8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<iframe width="1903" height="769" src="https://www.youtube.com/embed/8XIYNhregAY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<iframe width="1903" height="769" src="https://www.youtube.com/embed/MUFr8Hx4oEs?list=PLxe4FuKCdbM7VMj2nhJgKddTEsPPfMo2G" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
