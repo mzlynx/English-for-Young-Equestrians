@@ -2,6 +2,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>English for Young Equestrians</title>
     <style>
         .check-button {
@@ -29,9 +30,9 @@
     <br />
     Type your name here:
     <br />
-    <input type="text" id="input1" placeholder="your name" />
+    <input type="text" placeholder="your name" onkeypress="setTimeout(function(self){ Greating(self.value); }, 0, this); " />
     <br />
-    Glad to meet you, <input type="text" value="Panda" id="input1" />
+    Glad to meet you, <span id="yourName" ></span>!
     <br />
     Let's get started!
     <br />
@@ -115,7 +116,7 @@
             var input = document.getElementById(InputId);
             var feedback = document.getElementById(FeedbackId);
 
-            if (input.value == RightAnswer) {
+            if (input.value.toLowerCase() == RightAnswer) {
                 feedback.innerHTML = 'Well done!';
                 feedback.style.color = 'green';
             }
@@ -129,7 +130,7 @@
             var input = document.getElementById(InputId);
             var feedback = document.getElementById(FeedbackId);
 
-            if (RightAnswers.indexOf(input.value) != -1) {
+            if (RightAnswers.indexOf(input.value.toLowerCase()) != -1) {
                 feedback.innerHTML = 'Well done!';
                 feedback.style.color = 'green';
             }
@@ -146,7 +147,7 @@
             if (Select.value == '') {
                 feedback.innerHTML = '';
             }
-            else if (Select.value == RightAnswer) {
+            else if (Select.value.toLowerCase() == RightAnswer) {
                 feedback.innerHTML = 'Well done!';
                 feedback.style.color = 'green';
             }
@@ -154,6 +155,12 @@
                 feedback.innerHTML = 'Try again :(';
                 feedback.style.color = 'red';
             }
+        }
+
+        function Greating(name) {
+            var yourNameLabel = document.getElementById('yourName');
+
+            yourNameLabel.innerHTML = name;
         }
     </script>
 
@@ -226,7 +233,7 @@
     <br />
     2. It's a new <input type="text" id="input_type2" />.
     <br />
-    <button onclick="CheckTypeList('input_type2', 'feedback_type2', ['start', 'world', 'land'])" class="check-button">Check</button><span id="feedback_type2"></span>
+    <button onclick="CheckTypeList('input_type2', 'feedback_type2', ['start', 'world', 'land', 'day'])" class="check-button">Check</button><span id="feedback_type2"></span>
     <br />
     3. I's a <input type="text" id="input_type3" /> world!
     <br />
