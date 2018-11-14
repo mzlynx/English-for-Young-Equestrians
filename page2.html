@@ -1,0 +1,326 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>English for Young Equestrians</title>
+    <style>
+        .check-button {
+            background-color: rgba(235, 104, 57, 0.664);
+            color: olive;
+        }
+
+        .activity-header {
+            color:olive; 
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <br />
+    <div style="color:olive; font-size: x-large; text-align: center; font-weight: bold;">
+        Module 1. Lesson 2. Spirit: Here I am! 
+    </div>
+    <br />
+    <img src="C:\Users\User\Desktop\English for Young Equestrians\images\2spirit.jpeg" style="max-width: 100%"/>
+    <br />
+    <br />
+    <span class="activity-header">Activity 1. Let's listen and repeat:</span>
+    <br />
+    <audio controls>
+        <source src="sounds\here i am.mp3" type="audio/ogg; codecs=vorbis">
+      </audio>
+      <br />
+      1. Here I am.<br />
+      <br />
+      <audio controls>
+          <source src="sounds\it's a new day.mp3" type="audio/ogg; codecs=vorbis">
+          </audio>
+        <br />
+    2. It's a new day.
+    <br />
+      <audio controls>
+          <source src="sounds\it's a new plan.mp3" type="audio/ogg; codecs=vorbis">
+          </audio>
+        <br />
+        3. It's a new plan.
+    <br />
+      <audio controls>
+          <source src="sounds\it's a new strt.mp3" type="audio/ogg; codecs=vorbis">
+          </audio>
+        <br />
+    4. It's a new start.
+    <br />
+      <audio controls>
+          <source src="sounds\it's a new world.mp3" type="audio/ogg; codecs=vorbis">
+          </audio>
+        <br />
+    5. It's a new world.
+    <br />
+    <br />
+    <span class="activity-header">Activity 2. Let's learn 6 new words:</span>
+    <br />
+    1. here - здесь
+    <br />
+    2. this - это
+    <br />
+    3. come - приходить
+    <br />
+    4. so - такой
+    <br />
+    5. wild - дикий
+    <br />
+    6. free- свободный
+    <br />
+    <br />
+    <span class="activity-header">Activity 3. Let's practice! Unscramble the words:</span>
+    <br />1. здесь
+    <br /><span style="color:navy; font-weight: bold;">*ereh*</span>
+    <br />
+     <input type="text" placeholder="type your answer"  id="input_unscramble1" />
+    <button onclick="CheckType('input_unscramble1', 'feedback1', 'here')" class="check-button">Check</button>
+    <span id="feedback1"></span>
+    <br />
+
+    2. это
+    <br /><span style="color:navy; font-weight: bold;">*hits*</span>
+    <br />
+     <input type="text" placeholder="type your answer" id="input_unscramble2"  />
+    <button  onclick="CheckType('input_unscramble2', 'feedback2', 'this')" class="check-button">Check</button>
+    <span id="feedback2"></span>
+    <br />
+
+    3. приходить
+    <br /><span style="color:navy; font-weight: bold;">*meoc*</span>
+    <br />
+     <input type="text" placeholder="type your answer" id="input_unscramble3"  />
+    <button  onclick="CheckType('input_unscramble3', 'feedback3', 'come')" class="check-button">Check</button>
+    <span id="feedback3"></span>
+    <br />
+
+    4. такой
+    <br /><span style="color:navy; font-weight: bold;">*os*</span>
+    <br />
+     <input type="text" placeholder="type your answer" id="input_unscramble4"  />
+    <button onclick="CheckType('input_unscramble4', 'feedback4', 'so')" class="check-button">Check</button>
+    <span id="feedback4"></span>
+    <br />
+
+    5. дикий
+    <br /><span style="color:navy; font-weight: bold;">*dwil*</span>
+    <br />
+     <input type="text" placeholder="type your answer" id="input_unscramble5"  />
+    <button onclick="CheckType('input_unscramble5', 'feedback5', 'wild')" class="check-button">Check</button>
+    <span id="feedback5"></span>
+    <br />
+    
+    6. свободный
+    <br /><span style="color:navy; font-weight: bold;">*reef*</span>
+    <br />
+     <input type="text" placeholder="type your answer" id="input_unscramble5"  />
+    <button onclick="CheckType('input_unscramble5', 'feedback5', 'free')" class="check-button">Check</button>
+    <span id="feedback5"></span>
+    <br />
+    <br />
+
+    <script>
+        function CheckType(InputId, FeedbackId, RightAnswer) {
+            var input = document.getElementById(InputId);
+            var feedback = document.getElementById(FeedbackId);
+
+            if (input.value.toLowerCase().trim() == RightAnswer) {
+                feedback.innerHTML = 'Well done!';
+                feedback.style.color = 'green';
+            }
+            else {
+                feedback.innerHTML = 'Try again :(';
+                feedback.style.color = 'red';
+            }
+        }
+
+        function CheckTypeList(InputId, FeedbackId, RightAnswers) {
+            var input = document.getElementById(InputId);
+            var feedback = document.getElementById(FeedbackId);
+
+            if (RightAnswers.indexOf(input.value.toLowerCase().trim()) != -1) {
+                feedback.innerHTML = 'Well done!';
+                feedback.style.color = 'green';
+            }
+            else {
+                feedback.innerHTML = 'Try again :(';
+                feedback.style.color = 'red';
+            }
+        }
+
+        function CheckSelect(Select, FeedbackId, RightAnswer) {
+            //здесь мы проверяем селекты
+            var feedback = document.getElementById(FeedbackId);
+
+            if (Select.value.trim() == '') {
+                feedback.innerHTML = '';
+            }
+            else if (Select.value.toLowerCase().trim() == RightAnswer) {
+                feedback.innerHTML = 'Well done!';
+                feedback.style.color = 'green';
+            }
+            else {
+                feedback.innerHTML = 'Try again :(';
+                feedback.style.color = 'red';
+            }
+        }
+
+        function Greating(name) {
+            var yourNameLabel = document.getElementById('yourName');
+
+            yourNameLabel.innerHTML = name.trim();
+        }
+    </script>
+
+<span class="activity-header"> Activity 4. Let's practice! Choose the right option:</span>
+<br />
+1. здесь
+<br />
+<select onchange="CheckSelect(this, 'feedbackSelect1', 'here')">
+    <option></option>
+    <option>this</option>
+    <option>where</option>
+    <option>here</option>
+</select> I am. <span id="feedbackSelect1"></span>
+<br />
+2. это
+<br />
+<select onchange="CheckSelect(this, 'feedbackSelect2', 'this')">
+    <option></option>
+    <option>with</option>
+    <option>it's</option>
+    <option>this</option>.
+</select>is me. <span id="feedbackSelect2"></span>
+<br />
+3. приходить
+<br />
+I   <select onchange="CheckSelect(this, 'feedbackSelect3', 'come')">
+    <option></option>
+    <option>start</option>
+    <option>come</option>
+    <option>land</option>
+</select> into this world so wild and free. <span id="feedbackSelect3"></span>
+<br />
+4. дикий
+<br />
+I'm so
+<select onchange="CheckSelect(this, 'feedbackSelect4', 'wild')">
+    <option></option>
+    <option>start</option>
+    <option>young</option>
+    <option>wild</option>
+</select> start. <span id="feedbackSelect4"></span>
+<br />
+5. свободный
+<br />
+I'm 
+<select onchange="CheckSelect(this, 'feedbackSelect5', 'free')">
+    <option></option>
+    <option>free</option>
+    <option>day</option>
+    <option>wild</option>
+</select>. <span id="feedbackSelect5"></span>
+</select>. 
+<br />
+6. такой
+<br />
+I'm
+<select onchange="CheckSelect(this, 'feedbackSelect6', 'so')">
+    <option></option>
+    <option>so</option>
+    <option>me</option>
+    <option>come</option>
+</select> wild and free. <span id="feedbackSelect6"></span>
+<br />
+<br />
+<span class="activity-header">Activity 5. Let's practice! Fill in the gaps:</span>
+<br />
+1.  <input type="text" id="input_type1" />  I am.
+<br />
+<button onclick="CheckType('input_type1', 'feedback_type1', 'here')" style="background-color:rgb(241, 153, 121);" class="check-button">Check</button><span id="feedback_type1"></span>
+<br />
+2. <input type="text" id="input_type2" /> is me!
+<br />
+<button onclick="CheckType('input_type2', 'feedback_type2', 'this')" class="check-button">Check</button><span id="feedback_type2"></span>
+<br />
+3. I <input type="text" id="input_type3" /> into this world so wild and free.
+<br />
+<button onclick="CheckType('input_type3','feedback_type3', 'come')" class="check-button">Check</button><span id="feedback_type3"></span>
+<br />
+4. I am  <input type="text" id="input_type4" /> wild and free.
+<br />
+<button onclick="CheckType('input_type4', 'feedback_type4', 'so')" class="check-button">Check</button><span id="feedback_type4"></span>
+<br />
+<br />
+5. I am <input type="text" id="input_type5" /> .
+<br />
+<button onclick="CheckType('input_type5', 'feedback_type5', 'free')" class="check-button">Check</button><span id="feedback_type5"></span>
+<br />
+<br />
+6. I am so <input type="text" id="input_type6" />  and free.
+<br />
+<button onclick="CheckType('input_type6', 'feedback_type6', 'wild')" class="check-button">Check</button><span id="feedback_type6"></span>
+<br />
+<br />
+<span class="activity-header"> Activity 6. Now I know:</span>
+<br />
+1. вот и я - Here I am
+<br />
+2. новое начало - new start
+<br />
+I's a new start.
+<br />
+3.новая земля- new land
+<br />
+It's a new land.
+<br />
+4.новый мир- new world
+<br />
+It's a new wordl.
+<br />
+5. новый день - new day
+<br />
+It's a new day.
+<br />
+<br />
+    <br />
+    <span class="activity-header"> 
+        Activity 7. Let's sing together!
+    </span>
+    <br />
+        <iframe width="1280" height="720" src="https://www.youtube.com/embed/4LQ3gHQIQj8" style="max-width: 100%" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    <br />
+    <span style="color:olive">Here is the text for you:</span> 
+    <br />
+
+    Here I am<br />
+    This is me<br />
+    I come into this world so wild and free<br />
+    Here I am<br />
+    So young and strong<br />
+    Right here in the place where I belong<br />
+    It's a new world<br />
+    It's a new start<br />
+    It's a life with a beating of a young heart<br />
+    It's a new day<br />
+    In a new land<br />
+    And it's waiting for me<br />
+    Here I am<br />
+    Ooh!<br />
+    It's a new world<br />
+    It's a new start<br />
+    It's a life with a beating of a young heart<br />
+    Yeah, it's a new day<br />
+    In a new land<br />
+    And it's waiting for me<br />
+    Here I am
+
+
+    
+</body>
+</html>
+

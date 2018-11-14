@@ -1,0 +1,287 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>English for Young Equestrians</title>
+    <style>
+        .check-button {
+            background-color: rgba(235, 104, 57, 0.664);
+            color: olive;
+        }
+
+        .activity-header {
+            color:olive; 
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <br />
+    <div style="color:olive; font-size: x-large; text-align: center; font-weight: bold;">
+        Module 1. Lesson 3. Spirit: Here I am! 
+    </div>
+    <br />
+    <img src="C:\Users\User\Desktop\English for Young Equestrians\images\3spirit.jpg" style="max-width: 100%"/>
+    <br />
+    <span class="activity-header">Activity 2. Let's learn 6 new words:</span>
+    <br />
+       
+    1. young - молодой
+    <br />
+    2. strong - сильный
+    <br />
+    3. right - прямо, как раз
+    <br />
+    4. place - место
+    <br />
+    5. where - где (зд. которому)
+    <br />
+    6. belong - принадлежать
+    <br />
+    <br />
+    <span class="activity-header">Activity 3. Let's practice! Unscramble the words:</span>
+    <br />
+    1. молодой
+    <br /><span style="color:navy; font-weight: bold;">*nougy*</span>
+    <br />
+     <input type="text" placeholder="type your answer"  id="input_unscramble1" />
+    <button onclick="CheckType('input_unscramble1', 'feedback1', 'young')" class="check-button">Check</button>
+    <span id="feedback1"></span>
+    <br />
+
+    2. сильный
+    <br /><span style="color:navy; font-weight: bold;">*gtrosn*</span>
+    <br />
+     <input type="text" placeholder="type your answer" id="input_unscramble2"  />
+    <button  onclick="CheckType('input_unscramble2', 'feedback2', 'strong')" class="check-button">Check</button>
+    <span id="feedback2"></span>
+    <br />
+
+    3. прямо, как раз
+    <br /><span style="color:navy; font-weight: bold;">*rghti*</span>
+    <br />
+     <input type="text" placeholder="type your answer" id="input_unscramble3"  />
+    <button  onclick="CheckType('input_unscramble3', 'feedback3', 'right')" class="check-button">Check</button>
+    <span id="feedback3"></span>
+    <br />
+
+    4. место
+    <br /><span style="color:navy; font-weight: bold;">*acepl*</span>
+    <br />
+     <input type="text" placeholder="type your answer" id="input_unscramble4"  />
+    <button onclick="CheckType('input_unscramble4', 'feedback4', 'place')" class="check-button">Check</button>
+    <span id="feedback4"></span>
+    <br />
+
+    5. где (зд. которому)
+    <br /><span style="color:navy; font-weight: bold;">*wrehe*</span>
+    <br />
+     <input type="text" placeholder="type your answer" id="input_unscramble5"  />
+    <button onclick="CheckType('input_unscramble5', 'feedback5', 'where')" class="check-button">Check</button>
+    <span id="feedback5"></span>
+    <br />
+    
+    6. принадлежать
+    <br /><span style="color:navy; font-weight: bold;">*bnelog*</span>
+    <br />
+     <input type="text" placeholder="type your answer" id="input_unscramble5"  />
+    <button onclick="CheckType('input_unscramble5', 'feedback5', 'belong')" class="check-button">Check</button>
+    <span id="feedback5"></span>
+    <br />
+    <br />
+
+    <script>
+        function CheckType(InputId, FeedbackId, RightAnswer) {
+            var input = document.getElementById(InputId);
+            var feedback = document.getElementById(FeedbackId);
+
+            if (input.value.toLowerCase().trim() == RightAnswer) {
+                feedback.innerHTML = 'Well done!';
+                feedback.style.color = 'green';
+            }
+            else {
+                feedback.innerHTML = 'Try again :(';
+                feedback.style.color = 'red';
+            }
+        }
+
+        function CheckTypeList(InputId, FeedbackId, RightAnswers) {
+            var input = document.getElementById(InputId);
+            var feedback = document.getElementById(FeedbackId);
+
+            if (RightAnswers.indexOf(input.value.toLowerCase().trim()) != -1) {
+                feedback.innerHTML = 'Well done!';
+                feedback.style.color = 'green';
+            }
+            else {
+                feedback.innerHTML = 'Try again :(';
+                feedback.style.color = 'red';
+            }
+        }
+
+        function CheckSelect(Select, FeedbackId, RightAnswer) {
+            //здесь мы проверяем селекты
+            var feedback = document.getElementById(FeedbackId);
+
+            if (Select.value.trim() == '') {
+                feedback.innerHTML = '';
+            }
+            else if (Select.value.toLowerCase().trim() == RightAnswer) {
+                feedback.innerHTML = 'Well done!';
+                feedback.style.color = 'green';
+            }
+            else {
+                feedback.innerHTML = 'Try again :(';
+                feedback.style.color = 'red';
+            }
+        }
+
+        function Greating(name) {
+            var yourNameLabel = document.getElementById('yourName');
+
+            yourNameLabel.innerHTML = name.trim();
+        }
+    </script>
+
+<span class="activity-header"> Activity 4. Let's practice! Choose the right option:</span>
+<br />
+1. жизнь
+<br />
+It's a new <select onchange="CheckSelect(this, 'feedbackSelect1', 'life')">
+    <option></option>
+    <option> life</option>
+    <option>start</option>
+    <option>day</option>
+</select>. <span id="feedbackSelect1"></span>
+<br />
+2. ждать
+<br />
+A new life is <select onchange="CheckSelect(this, 'feedbackSelect2', 'waiting')">
+    <option></option>
+    <option>coming</option>
+    <option>waiting</option>
+    <option>starting</option>.
+</select> for me. <span id="feedbackSelect2"></span>
+<br />
+3. биение
+<br />
+It's a life with a <select onchange="CheckSelect(this, 'feedbackSelect3', 'beating')">
+    <option></option>
+    <option>waiting</option>
+    <option>beating</option>
+    <option>reading</option>
+</select>  of a young heart.  <span id="feedbackSelect3"></span>
+<br />
+4. сердце
+<br />
+It's a young
+<select onchange="CheckSelect(this, 'feedbackSelect4', 'heart')">
+    <option></option>
+    <option>start</option>
+    <option>heart</option>
+    <option>place</option>
+</select>. <span id="feedbackSelect4"></span>
+<br />
+5. для 
+<br />
+A new life is waiting
+<select onchange="CheckSelect(this, 'feedbackSelect5', 'for')">
+    <option></option>
+    <option>for</option>
+    <option>where</option>
+    <option>this</option>
+</select> me. <span id="feedbackSelect5"></span>
+</select>. 
+<br />
+6. c
+<br />
+It's a life   
+<select onchange="CheckSelect(this, 'feedbackSelect6', 'with')">
+    <option></option>
+    <option>is</option>
+    <option>with</option>
+    <option>it's</option>
+</select> a beating of a young heart. <span id="feedbackSelect6"></span>
+<br />
+<br />
+<span class="activity-header">Activity 5. Let's practice! Fill in the gaps:</span>
+<br />
+
+1. I am in the  <input type="text" id="input_type1" />  where I belong.
+<br />
+<button onclick="CheckType('input_type1', 'feedback_type1', 'place')" style="background-color:rgb(241, 153, 121);" class="check-button">Check</button><span id="feedback_type1"></span>
+<br />
+2. I am   <input type="text" id="input_type2" />here.
+<br />
+<button onclick="CheckTypeList('input_type2', 'feedback_type2', 'right')" class="check-button">Check</button><span id="feedback_type2"></span>
+<br />
+3. I come to this world so  <input type="text" id="input_type3" /> and strong. 
+<br />
+<button onclick="CheckType('input_type3', 'feedback_type3', 'young')" class="check-button">Check</button><span id="feedback_type3"></span>
+<br />
+4. I am so <input type="text" id="input_type4" />.
+<br />
+<button onclick="CheckType('input_type4', 'feedback_type4', 'strong')" class="check-button">Check</button><span id="feedback_type4"></span>
+<br />
+5. Come <input type="text" id="input_type5"/> me.
+<br />
+<button onclick="CheckType('input_type5', 'feedback_type5', 'with')" class="check-button">Check</button><span id="feedback_type5"></span>
+<br />
+6. A new life is waiting <input type="text" id="input_type6"/> me.
+<br />
+<button onclick="CheckType('input_type6', 'feedback_type6', 'for')" class="check-button">Check</button><span id="feedback_type6"></span>
+<br />
+
+<span class="activity-header"> Activity 6. Now I know:</span>
+<br />
+1. young and strong  - молодой и сильный<br />
+I am young and strong.<br />
+2. right here – прямо здесь<br />
+I am right here.<br />
+3. wild place - дикое место<br />
+It’s a wild place.<br />
+4. belong – принадлежать<br />
+I belong here. <br />
+5. place where  I belong – место, которому я принадлежу<br />
+It’s the place where I belong.<br />
+
+
+<br />
+    <br />
+    <span class="activity-header"> 
+        Activity 7. Let's sing together!
+    </span>
+    <br />
+        <iframe width="1280" height="720" src="https://www.youtube.com/embed/4LQ3gHQIQj8" style="max-width: 100%" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    <br />
+    <span style="color:olive">Here is the text for you:</span> 
+    <br />
+
+    Here I am<br />
+    This is me<br />
+    I come into this world so wild and free<br />
+    Here I am<br />
+    So young and strong<br />
+    Right here in the place where I belong<br />
+    It's a new world<br />
+    It's a new start<br />
+    It's a life with a beating of a young heart<br />
+    It's a new day<br />
+    In a new land<br />
+    And it's waiting for me<br />
+    Here I am<br />
+    Ooh!<br />
+    It's a new world<br />
+    It's a new start<br />
+    It's a life with a beating of a young heart<br />
+    Yeah, it's a new day<br />
+    In a new land<br />
+    And it's waiting for me<br />
+    Here I am
+
+
+    
+</body>
+</html>
+ 
