@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Lesson 1</title>
+    </head>
+    <body>
+        <img src="images/click.jpg" style="max-width: 100%; cursor: pointer;" onclick="playSound('sounds/good morning Artem.mp3');" />
+        <br>
+        <h1> 1. Let's have a look at the calendar. </h1>
+        <img src="images/calendar TH.jpg" style="max-width: 100%;" />
+        <br>
+        <h1> 2. Let's click, listen and repeat. </h1>
+        <img src="images/week.jpg" style="max-width: 100%; cursor: pointer;" onclick="playSound('sounds/Weekdays.mp3');" />
+        <br>
+        <h1> 3. Click. Listen. Answer. </h1>
+        <img src="images/ballbw.jpg" style="max-width: 100%;cursor: pointer;" onclick="playSound('sounds/when.mp3');" />
+        <h1> 4. Look at the picture. Click. Listen. Repeat.</h1>
+        <img src="images/equipment.jpg" style="max-width: 100%; cursor: pointer;" onclick="playSound('sounds/gear.mp3');" />
+        <br>
+        <h1> 5. Have you got this training equipment? </h1>
+        Complete the answer
+        - I have got <div class=""></div>
+        <br>
+        <br>
+        <h1> 6. Click. Listen. Answer. </h1>
+        <img src="images/click.jpg" style="max-width: 100%; cursor: pointer;" onclick="playSound('sounds/what_colour.mp3');" />
+        <img src="images/ball w.jpg" style="max-width: 100%;" />
+        <img src="images/ball-br.jpg" style="max-width: 100%;" />
+        <img src="images/black ball.jpg" style="max-width: 100%;" />
+        <img src="images/ball.jpg" style="max-width: 100%;" />
+        <br>
+        <h1> 7. Click. Listen. Answer. </h1>
+        <img src="images/click.jpg" style="max-width: 100%; cursor: pointer;" onclick="playSound('sounds/how many balls.mp3');" />
+        <img src="images/balls.jpg" style="max-width: 100%;" />
+        <img src="images/ballsc.jpg" style="max-width: 100%;" />
+        <br>
+        <h1> 8. Click. Listen. Answer. </h1>
+        <img src="images/footballkiten.jpg" style="max-width: 100%; cursor: pointer;" onclick="playSound('sounds/football player.mp3');" />
+        <h1> 9. Look and read</h1>
+        <img src="images/keep.jpg" style="max-width: 100%;" />
+            <br>
+    </body>
+    <script>
+
+        function playSound(fileName) {
+            let audioObject = new Audio(fileName);
+            audioObject.play();
+        }
+    </script>
+</html>
